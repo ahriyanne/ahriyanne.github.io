@@ -1,0 +1,154 @@
+/* Set up the black screen */
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Center the text for div#intro */
+#intro {
+    text-align: center;
+}
+
+/* Style for all lines */
+.fade-in {
+    opacity: 0;
+    font-size: 1.8rem;
+    font-style: italic; /* Make sure text is italicized */
+    animation: fadeIn 2s forwards;
+    margin: 10px 0;
+}
+
+/* Larger font for the second part's lines */
+#line5, #line6 {
+    font-size: 2.5rem;
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add delay to each line in the first set */
+#line1 {
+    animation-delay: 0s;  /* Immediately fades in */
+}
+
+#line2 {
+    animation-delay: 3s;  /* Delays by 3 seconds */
+}
+
+#line3 {
+    animation-delay: 6s;  /* Delays by 6 seconds */
+}
+
+#line4 {
+    animation-delay: 9s;  /* Delays by 9 seconds */
+}
+
+/* Add delay to each line in the second set */
+#line5 {
+    animation-delay: 12s;  /* Starts fading in after the first set of lines */
+}
+
+#line6 {
+    animation-delay: 15s;  /* Starts fading in 3 seconds after #line5 */
+}
+
+/* Hidden container for 'Follow me...' and new lines */
+#follow-me-container {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the 'Follow me...' text */
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Fade-out animation when intro lines are finished */
+.fade-out {
+    opacity: 0 !important;  /* Force opacity to 0 */
+    transition: opacity 2s ease-out; /* Smooth fade-out */
+}
+
+/* Black overlay on top of the background image */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 30% opacity */
+    pointer-events: none; /* Makes sure it doesn't interfere with interactions */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease; /* Smooth transition */
+}
+
+/* Dialogue box at the bottom */
+#dialogue-box, #bear-dialogue-box, #ivan-dialogue-box, #ivan-dialogue-box2 {
+    position: absolute;
+    bottom: 20px;
+    width: 90%; /* Wider width */
+    max-width: 1000px; /* Max width of the dialogue box */
+    height: 150px; /* Fixed height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent */
+    padding: 15px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-align: left;
+    display: none; /* Initially hidden */
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows scrolling if text is too long */
+    z-index: 20; /* Ensure it's above the bear image */
+}
+
+/* Name rectangle positioned left above the dialogue box */
+#name-box, #bear-name-box {
+    position: absolute;
+    bottom: 180px; /* Adjusted so it's above the dialogue box */
+    left: 115px;  /* Positioned on the left side */
+    padding: 5px 10px;
+    background-color: rgb(79, 150, 221); /* Yellow background */
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 21; /* Ensure it's above the bear image */
+}
+
+/* Styles for clickable text */
+#click-to-next, #bear-click-to-next, #ivan-click-to-next, #ivan-click-to-next2 {
+    position: absolute;
+    bottom: 5px; /* Positioned near the bottom of the dialogue box */
+    right: 20px; /* Positioned towards the right */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    z-index: 22; /* Ensure it's above everything */
+}
+
+#click-to-next:hover, #bear-click-to-next:hover, #ivan-click-to-next:hover, #ivan-click-to-next2:hover {
+    color: #ccc;
+}
+
+/* Bear image positioning */
+#bear {
+    position: absolute;
+    top: 70%;  /* Adjust to position it lower on the screen */
+    left: 50%;  /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the image */
+    z-index: 10;  /* Ensure the bear is below the dialogue box */
+}

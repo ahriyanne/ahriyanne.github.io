@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="background-music" loop autoplay>
+        <source src="assets/backgroundmusic.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- First div with initial messages -->
+    <div id="intro">
+        <p class="fade-in" id="line1">Hey... are you still awake?</p>
+        <p class="fade-in" id="line2">I know it's late, but I just couldn't sleep.</p>
+        <p class="fade-in" id="line3">There's something I’ve been meaning to tell you.</p>
+        <p class="fade-in" id="line4">But not here. Not yet.</p>
+    </div>
+
+    <!-- Second div for next set of lines -->
+    <div id="follow-me-container" class="hidden">
+        <p id="line5" class="fade-in">Time really flies, doesn't it?</p>
+        <p id="line6" class="fade-in">When did it all start, anyway?</p>
+    </div>
+
+    <!-- Name box in the top left corner -->
+    <div id="name-box">IVAN</div>
+
+    <!-- Dialogue box at the bottom -->
+    <div id="dialogue-box">
+        <p id="dialogue-text">(This place... NU Fairview...?)</p>
+        <p id="click-to-next">Click to continue...</p>
+    </div>
+
+    <!-- Bear Dialogue Box Section -->
+    <div id="bear-name-box" style="display:none;">
+        <p id="bear-name">Bear</p>
+    </div>
+
+    <div id="bear-dialogue-box" style="display:none;">
+        <p id="bear-dialogue-text">!</p>
+        <p id="bear-click-to-next">Click to continue...</p>
+    </div>
+
+    <!-- Ivan's new dialogue section -->
+    <div id="ivan-dialogue-box" style="display:none;">
+        <p id="ivan-dialogue-text">Did I just see a bear?</p>
+        <p id="ivan-click-to-next">Click to continue...</p>
+    </div>
+
+    <div id="ivan-dialogue-box2" style="display:none;">
+        <p id="ivan-dialogue-text2">It went inside the school. I should go follow it.</p>
+        <p id="ivan-click-to-next2">Click to continue...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
